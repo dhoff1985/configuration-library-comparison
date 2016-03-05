@@ -1,4 +1,4 @@
-package com.dthoffman.config.example.integration
+package com.dthoffman.config.example.test.integration
 
 import groovyx.net.http.HTTPBuilder
 import org.eclipse.jetty.annotations.AnnotationConfiguration

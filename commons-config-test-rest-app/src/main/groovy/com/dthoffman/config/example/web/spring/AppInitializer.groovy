@@ -1,6 +1,5 @@
 package com.dthoffman.config.example.web.spring
 
-import com.dthoffman.config.example.web.AppConfig
 import com.sun.jersey.spi.spring.container.servlet.SpringServlet
 import org.springframework.stereotype.Component
 import org.springframework.web.WebApplicationInitializer
