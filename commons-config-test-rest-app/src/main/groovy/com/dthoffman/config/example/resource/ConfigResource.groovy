@@ -1,5 +1,6 @@
-package com.dthoffman.config.example.web
+package com.dthoffman.config.example.resource
 
+import com.dthoffman.config.example.config.MemoryConfiguration
 import org.apache.commons.configuration.CompositeConfiguration
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Component

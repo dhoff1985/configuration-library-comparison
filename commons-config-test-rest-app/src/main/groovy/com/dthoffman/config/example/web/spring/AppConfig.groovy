@@ -1,6 +1,6 @@
 package com.dthoffman.config.example.web.spring
 
-import com.dthoffman.config.example.web.MemoryConfiguration
+import com.dthoffman.config.example.config.MemoryConfiguration
 import org.apache.commons.configuration.CompositeConfiguration
 import org.apache.commons.configuration.PropertiesConfiguration
 import org.springframework.context.annotation.Bean
@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration
  * Created by dhoffman on 2/27/16.
  */
 @Configuration
-@ComponentScan(basePackages = ["com.dthoffman.config.example.web"])
+@ComponentScan(basePackages = ["com.dthoffman.config.example"])
 class AppConfig {
     @Bean
     CompositeConfiguration configuration(MemoryConfiguration memoryConfiguration) {

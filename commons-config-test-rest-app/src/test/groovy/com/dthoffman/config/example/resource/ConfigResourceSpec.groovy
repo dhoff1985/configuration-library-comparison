@@ -1,7 +1,7 @@
-package com.dthoffman.config.example.test.unit
+package com.dthoffman.config.example.resource
 
-import com.dthoffman.config.example.web.ConfigResource
-import com.dthoffman.config.example.web.MemoryConfiguration
+import com.dthoffman.config.example.resource.ConfigResource
+import com.dthoffman.config.example.config.MemoryConfiguration
 import org.apache.commons.configuration.CompositeConfiguration
 import spock.lang.Specification
 

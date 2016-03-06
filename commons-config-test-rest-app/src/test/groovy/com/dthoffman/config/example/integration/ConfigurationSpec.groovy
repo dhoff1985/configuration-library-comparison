@@ -1,7 +1,6 @@
-package com.dthoffman.config.example.test.integration
+package com.dthoffman.config.example.integration
 
 import groovyx.net.http.ContentType
-import groovyx.net.http.HttpResponseDecorator
 import groovyx.net.http.HttpResponseException
 import groovyx.net.http.Method
 
@@ -12,27 +11,21 @@ class ConfigurationSpec extends BaseIntegrationSpec {
 
     def "sets/gets config"() {
         when:
-        String responseBody = appHttpBuilder.request(Method.PUT, ContentType.TEXT) {
+        StringReader responseBody = appHttpBuilder.request(Method.PUT, ContentType.TEXT) {
             uri.path = "/config/foo"
             body = "baz"
-            response.success  = { HttpResponseDecorator resp, InputStreamReader reader ->
-                reader.text
-            }
         }
 
         then:
-        responseBody == "bar"
+        responseBody.text == "bar"
 
         when:
         responseBody = appHttpBuilder.request(Method.GET, ContentType.TEXT) {
             uri.path = "/config/foo"
-            response.success  = { HttpResponseDecorator resp, InputStreamReader reader ->
-                reader.text
-            }
         }
 
         then:
-        responseBody == "baz"
+        responseBody.text == "baz"
 
         cleanup:
         appHttpBuilder.request(Method.DELETE, ContentType.TEXT) {
@@ -42,15 +35,12 @@ class ConfigurationSpec extends BaseIntegrationSpec {
 
     def "gets config"() {
         when:
-        String responseBody = appHttpBuilder.request(Method.GET, ContentType.TEXT) {
+        StringReader responseBody = appHttpBuilder.request(Method.GET, ContentType.TEXT) {
             uri.path = "/config/foo"
-            response.success  = { HttpResponseDecorator resp, InputStreamReader reader ->
-                reader.text
-            }
         }
 
         then:
-        responseBody == "bar"
+        responseBody.text == "bar"
     }
 
     def "gets missing config"() {

@@ -1,4 +1,4 @@
-package com.dthoffman.config.example.web
+package com.dthoffman.config.example.resource
 
 import org.springframework.stereotype.Component
 

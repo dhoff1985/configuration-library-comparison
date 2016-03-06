@@ -1,4 +1,4 @@
-package com.dthoffman.config.example.test.integration
+package com.dthoffman.config.example.integration
 
 import groovyx.net.http.HTTPBuilder
 import org.eclipse.jetty.annotations.AnnotationConfiguration
@@ -10,7 +10,7 @@ import org.eclipse.jetty.webapp.WebAppContext
 import org.eclipse.jetty.webapp.WebInfConfiguration
 import spock.lang.Specification
 
-class BaseIntegrationSpec extends Specification {
+abstract class BaseIntegrationSpec extends Specification {
 
     String getAppUri() {
         server.getURI()
@@ -20,6 +20,7 @@ class BaseIntegrationSpec extends Specification {
     HTTPBuilder getAppHttpBuilder() {
         if(!_appHttpBuilder) {
             _appHttpBuilder = new HTTPBuilder(appUri)
+            _appHttpBuilder
         }
         return _appHttpBuilder
     }

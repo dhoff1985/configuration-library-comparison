@@ -1,4 +1,4 @@
-package com.dthoffman.config.example.web
+package com.dthoffman.config.example.config
 
 import org.apache.commons.configuration.BaseConfiguration
 

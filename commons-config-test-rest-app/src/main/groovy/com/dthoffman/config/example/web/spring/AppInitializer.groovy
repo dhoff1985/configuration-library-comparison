@@ -21,7 +21,7 @@ class AppInitializer implements WebApplicationInitializer {
         SpringServlet springServlet = new SpringServlet()
         ServletRegistration registration = servletContext.addServlet('spring-servet', springServlet)
         registration.addMapping("/*")
-        registration.setInitParameter('com.sun.jersey.config.property.packages', 'com.dthoffman.config.example.web')
+        registration.setInitParameter('com.sun.jersey.config.property.packages', 'com.dthoffman.config.example.resource')
         AnnotationConfigWebApplicationContext rootContext = new AnnotationConfigWebApplicationContext();
         rootContext.register(AppConfig.class);
         servletContext.addListener(new ContextLoaderListener(rootContext))
